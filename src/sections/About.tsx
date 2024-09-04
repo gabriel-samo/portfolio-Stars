@@ -1,11 +1,5 @@
 "use client";
-import bookImage from "@/assets/images/book-cover.png";
-import JavascriptIcon from "@/assets/icons/square-js.svg";
-import HTMLIcon from "@/assets/icons/html5.svg";
-import CSSIcon from "@/assets/icons/css3.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
+import bookImage from "@/assets/images/book_7-habits.png";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 
@@ -13,33 +7,16 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/Card";
+import { hobbies } from "../../data/hobbies";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { toolboxItems } from "../../data/toolboxItems";
 import { SectionHeader } from "@/components/SectionHeader";
-
-const toolboxItems = [
-  { title: "JavaScript", iconType: JavascriptIcon },
-  { title: "HTML5", iconType: HTMLIcon },
-  { title: "CSS3", iconType: CSSIcon },
-  { title: "React", iconType: ReactIcon },
-  { title: "Chrome", iconType: ChromeIcon },
-  { title: "GitHub", iconType: GithubIcon }
-];
-
-const hobbies = [
-  { title: "Painting", emoji: "🎨", left: "5%", top: "5%" },
-  { title: "Photography", emoji: "📸", left: "50%", top: "5%" },
-  { title: "Hiking", emoji: "🥾", left: "35%", top: "40%" },
-  { title: "Gaming", emoji: "🎮", left: "10%", top: "35%" },
-  { title: "Music", emoji: "🎵", left: "70%", top: "45%" },
-  { title: "Fitness", emoji: "🏋️‍♂️", left: "5%", top: "65%" },
-  { title: "Reading", emoji: "📚", left: "45%", top: "70%" }
-];
 
 export const AboutSection = () => {
   const constraintRef = useRef<HTMLDivElement>(null);
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28" id="about">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
