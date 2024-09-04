@@ -1,10 +1,11 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Button, Input, Textarea } from "@nextui-org/react";
+import { Button, Spinner } from "@nextui-org/react";
 
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { MyInput } from "./MyInput";
 import { MyTextarea } from "./MyTextarea";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import toast from "react-hot-toast";
 
 type TFormData = {
   name: string;
@@ -14,13 +15,27 @@ type TFormData = {
 
 const ContactForm = () => {
   const {
+    reset,
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors, isSubmitting }
   } = useForm<TFormData>();
 
-  const onSubmit: SubmitHandler<TFormData> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<TFormData> = async (data) => {
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        toast.success("Message sent successfully");
+        reset();
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message");
+    }
   };
 
   return (
@@ -70,10 +85,20 @@ const ContactForm = () => {
       <Button
         type="submit"
         variant="shadow"
+        isDisabled={isSubmitting}
         className="text-white bg-gray-900 inline-flex items-center h-12 rounded-xl gap-2 border border-gray-900 hover:bg-transparent hover:text-gray-900 transition-all duration-300 w-full"
       >
-        <span className="font-semibold">Contact Me</span>
-        <ArrowUpRightIcon className="size-4" />
+        {isSubmitting ? (
+          <>
+            <span className="font-semibold">Sending...</span>
+            <Spinner color="white" />
+          </>
+        ) : (
+          <>
+            <span className="font-semibold">Contact Me</span>
+            <ArrowUpRightIcon className="size-4" />
+          </>
+        )}
       </Button>
     </form>
   );

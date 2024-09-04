@@ -13,7 +13,7 @@ export const ProjectsSection = () => {
         <SectionHeader
           eyebrow="Real-wolrd Results"
           title="Featured Projects"
-          description="See how i tramsformed concepts into engaging digitial experiences."
+          description="See how i transformed concepts into engaging websites."
         />
         <div className="mt-10 md:mt-20 flex flex-col gap-20">
           {portfolioProjects.map((project, index) => (
