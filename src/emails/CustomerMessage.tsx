@@ -29,12 +29,10 @@ export const CustomerMessage = ({ name, email, message }: Props) => (
             New message from {name}!
           </Heading>
           <Text className="text-[#333] mb-[14px] font-sans text-sm my-[24px] mx-0">
-            <span className="font-bold">Name:</span>{" "}
-            <div className="">{name}</div>
+            <span className="font-bold">Name:</span> {name}
           </Text>
           <Text className="text-[#333] mb-[14px] font-sans text-sm my-[24px] mx-0">
-            <span className="font-bold">Email:</span>{" "}
-            <a href={`mailto:${email}`}>{email}</a>
+            Email: <a href={`mailto:${email}`}>{email}</a>
           </Text>
           <Text className="text-[#333] mb-[14px] font-sans text-sm my-[24px] mx-0 flex flex-col">
             <span className="font-bold">Message:</span>

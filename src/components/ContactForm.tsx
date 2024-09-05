@@ -29,7 +29,9 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        toast.success("Message sent successfully");
+        toast.success(
+          "Message sent successfully\nPlease check your email for a confirmation"
+        );
         reset();
       }
     } catch (error) {

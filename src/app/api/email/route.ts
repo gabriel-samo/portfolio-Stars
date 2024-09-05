@@ -1,16 +1,18 @@
+import { handle } from "hono/vercel";
 import { Resend } from "resend";
-import { NextResponse } from "next/server";
+import { Hono } from "hono";
 
 import Welcome from "@/emails/Welcome";
 import CustomerMessage from "@/emails/CustomerMessage";
 
 export const runtime = "edge";
 
+const app = new Hono().basePath("/api");
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request) {
+app.post("/email", async (c) => {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message } = await c.req.json();
 
     const { data: toCustomer, error: toCustomerError } =
       await resend.emails.send({
@@ -28,18 +30,17 @@ export async function POST(req: Request) {
     });
 
     if (toCustomerError) {
-      return NextResponse.json(
-        { error: toCustomerError.message },
-        { status: 500 }
-      );
+      return c.json({ error: toCustomerError.message }, { status: 500 });
     }
 
     if (toMeError) {
-      return NextResponse.json({ error: toMeError.message }, { status: 500 });
+      return c.json({ error: toMeError.message }, { status: 500 });
     }
 
-    return NextResponse.json({ status: 200, toCustomer, toMe });
+    return c.json({ status: 200, toCustomer, toMe });
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return c.json({ error: error.message }, { status: 500 });
   }
-}
+});
+
+export const POST = handle(app);

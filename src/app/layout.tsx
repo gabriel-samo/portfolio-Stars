@@ -14,7 +14,7 @@ const calistoga = Calistoga({
 
 export const metadata: Metadata = {
   title: "My Portfolio",
-  description: "Created with the help of Frontend Tribe"
+  description: "Created by Gabriel Samoylov, heavily inspired by Frontend Tribe"
 };
 
 export const runtime = "edge";
@@ -33,7 +33,7 @@ export default function RootLayout({
           "bg-gray-900 text-white antialiased font-sans"
         )}
       >
-        <Toaster position="top-right" />
+        <Toaster position="top-center" />
         {children}
       </body>
     </html>
