@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
-import { portfolioProjects } from "../../data/portfolioProjects";
+import { portfolioProjects } from "@/data/portfolioProjects";
 
 export const ProjectsSection = () => {
   return (

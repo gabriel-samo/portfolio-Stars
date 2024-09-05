@@ -7,10 +7,10 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/Card";
-import { hobbies } from "../../data/hobbies";
+import { hobbies } from "@/data/hobbies";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
-import { toolboxItems } from "../../data/toolboxItems";
+import { toolboxItems } from "@/data/toolboxItems";
 import { SectionHeader } from "@/components/SectionHeader";
 
 export const AboutSection = () => {
