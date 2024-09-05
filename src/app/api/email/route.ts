@@ -2,7 +2,7 @@ import { handle } from "hono/vercel";
 import { Resend } from "resend";
 import { Hono } from "hono";
 
-import Welcome from "@/emails/Welcome";
+// import Welcome from "@/emails/Welcome";
 import CustomerMessage from "@/emails/CustomerMessage";
 
 export const runtime = "edge";
@@ -14,13 +14,13 @@ app.post("/email", async (c) => {
   try {
     const { name, email, message } = await c.req.json();
 
-    const { data: toCustomer, error: toCustomerError } =
-      await resend.emails.send({
-        from: "samo@gabrielsamo.com",
-        to: email,
-        subject: "Your message was sent! | gabrielsamo.com",
-        react: Welcome({ name, email })
-      });
+    // const { data: toCustomer, error: toCustomerError } =
+    //   await resend.emails.send({
+    //     from: "samo@gabrielsamo.com",
+    //     to: email,
+    //     subject: "Your message was sent! | gabrielsamo.com",
+    //     react: Welcome({ name, email })
+    //   });
 
     const { data: toMe, error: toMeError } = await resend.emails.send({
       from: "samo@gabrielsamo.com",
@@ -29,15 +29,15 @@ app.post("/email", async (c) => {
       react: CustomerMessage({ name, email, message })
     });
 
-    if (toCustomerError) {
-      return c.json({ error: toCustomerError.message }, { status: 500 });
-    }
+    // if (toCustomerError) {
+    //   return c.json({ error: toCustomerError.message }, { status: 500 });
+    // }
 
     if (toMeError) {
       return c.json({ error: toMeError.message }, { status: 500 });
     }
 
-    return c.json({ status: 200, toCustomer, toMe });
+    return c.json({ status: 200, toMe });
   } catch (error: any) {
     return c.json({ error: error.message }, { status: 500 });
   }
