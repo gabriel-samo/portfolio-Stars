@@ -13,8 +13,9 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Created by Gabriel Samoylov, heavily inspired by Frontend Tribe"
+  title: "Gabriel Samo",
+  description:
+    "Personal website created by me, heavily inspired by Frontend Tribe"
 };
 
 export const runtime = "edge";
