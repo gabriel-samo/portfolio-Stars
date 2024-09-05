@@ -1,11 +1,11 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import blogDemoWebsite from "@/assets/images/blog-dark-light.png";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 
 import Image from "next/image";
 
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
-import { portfolioProjects } from "@/data/portfolioProjects";
 
 export const ProjectsSection = () => {
   return (
@@ -69,3 +69,18 @@ export const ProjectsSection = () => {
     </section>
   );
 };
+
+export const portfolioProjects = [
+  {
+    company: "Samo-Blog",
+    year: "2024",
+    title: "Blog Demo Website",
+    results: [
+      { title: "React, TailwindCSS and Flowbite" },
+      { title: "Express as the backend" },
+      { title: "MongoDB as the database" }
+    ],
+    link: "https://samo-blog.onrender.com/",
+    image: blogDemoWebsite
+  }
+];

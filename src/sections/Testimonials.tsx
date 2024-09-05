@@ -1,7 +1,7 @@
 import Image from "next/image";
+import comingSoon from "@/assets/images/default-profile.png";
 
 import { Card } from "@/components/Card";
-import { testimonials } from "@/data/testimonials";
 import { SectionHeader } from "@/components/SectionHeader";
 
 export const TestimonialsSection = () => {
@@ -47,3 +47,30 @@ export const TestimonialsSection = () => {
     </section>
   );
 };
+
+export const testimonials = [
+  {
+    name: "Coming Soon",
+    position: "",
+    text: "",
+    avatar: comingSoon
+  },
+  {
+    name: "Coming Soon",
+    position: "",
+    text: "",
+    avatar: comingSoon
+  },
+  {
+    name: "Coming Soon",
+    position: "",
+    text: "",
+    avatar: comingSoon
+  },
+  {
+    name: "Coming Soon",
+    position: "",
+    text: "",
+    avatar: comingSoon
+  }
+];
