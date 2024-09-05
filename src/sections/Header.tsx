@@ -1,6 +1,3 @@
-"use client";
-import { twMerge } from "tailwind-merge";
-
 export const Header = () => {
   // const handleScroll = (id: string) => {
   //   document.getElementById(id)?.scrollIntoView({

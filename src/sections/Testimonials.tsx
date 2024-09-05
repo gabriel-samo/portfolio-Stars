@@ -1,7 +1,8 @@
-import { SectionHeader } from "@/components/SectionHeader";
-import { Card } from "@/components/Card";
 import Image from "next/image";
+
+import { Card } from "@/components/Card";
 import { testimonials } from "../../data/testimonials";
+import { SectionHeader } from "@/components/SectionHeader";
 
 export const TestimonialsSection = () => {
   return (

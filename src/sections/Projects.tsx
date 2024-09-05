@@ -2,8 +2,9 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 
 import Image from "next/image";
-import { SectionHeader } from "@/components/SectionHeader";
+
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components/SectionHeader";
 import { portfolioProjects } from "../../data/portfolioProjects";
 
 export const ProjectsSection = () => {

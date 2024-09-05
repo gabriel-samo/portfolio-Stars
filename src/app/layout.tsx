@@ -1,9 +1,9 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
-import { Inter, Calistoga } from "next/font/google";
 import { twMerge } from "tailwind-merge";
-import { Providers } from "@/components/Providers";
 import { Toaster } from "react-hot-toast";
+import { Inter, Calistoga } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   title: "My Portfolio",
   description: "Created with the help of Frontend Tribe"
 };
+
+export const runtime = "edge";
 
 export default function RootLayout({
   children
@@ -31,10 +33,8 @@ export default function RootLayout({
           "bg-gray-900 text-white antialiased font-sans"
         )}
       >
-        <Providers>
-          <Toaster position="top-right" />
-          {children}
-        </Providers>
+        <Toaster position="top-right" />
+        {children}
       </body>
     </html>
   );

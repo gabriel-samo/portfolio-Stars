@@ -1,10 +1,10 @@
 "use client";
-import bookImage from "@/assets/images/book_7-habits.png";
 import mapImage from "@/assets/images/map.png";
+import bookImage from "@/assets/images/book_7-habits.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 
 import Image from "next/image";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/Card";
 import { hobbies } from "../../data/hobbies";

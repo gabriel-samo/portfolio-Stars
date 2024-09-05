@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import Welcome from "@/emails/Welcome";
 import CustomerMessage from "@/emails/CustomerMessage";
 
+export const runtime = "edge";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {

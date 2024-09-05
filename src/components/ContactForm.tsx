@@ -1,11 +1,11 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Button, Spinner } from "@nextui-org/react";
-
-import { MyInput } from "./MyInput";
-import { MyTextarea } from "./MyTextarea";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import { Input, Textarea } from "@nextui-org/input";
+import { Spinner } from "@nextui-org/spinner";
+import { Button } from "@nextui-org/button";
 import toast from "react-hot-toast";
+
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 
 type TFormData = {
   name: string;
@@ -40,12 +40,13 @@ const ContactForm = () => {
 
   return (
     <form
-      className="dark flex flex-col gap-4 mx-auto mt-4 items-center"
+      className="flex flex-col gap-4 mx-auto mt-4 items-center"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <MyInput
-        type="text"
+      <Input
         label="Name"
+        className=""
+        type="text"
         isInvalid={!!errors.name}
         errorMessage={errors.name?.message}
         {...register("name", {
@@ -56,9 +57,10 @@ const ContactForm = () => {
           }
         })}
       />
-      <MyInput
-        type="email"
+      <Input
         label="Email"
+        className="w-full"
+        type="email"
         isInvalid={!!errors.email}
         errorMessage={errors.email?.message}
         {...register("email", {
@@ -69,9 +71,10 @@ const ContactForm = () => {
           }
         })}
       />
-      <MyTextarea
+      <Textarea
         label="Message"
         placeholder="Your message here..."
+        className=""
         isInvalid={!!errors.message}
         errorMessage={errors.message?.message}
         {...register("message", {
@@ -84,14 +87,13 @@ const ContactForm = () => {
       />
       <Button
         type="submit"
-        variant="shadow"
         isDisabled={isSubmitting}
         className="text-white bg-gray-900 inline-flex items-center h-12 rounded-xl gap-2 border border-gray-900 hover:bg-transparent hover:text-gray-900 transition-all duration-300 w-full"
       >
         {isSubmitting ? (
           <>
+            <Spinner />
             <span className="font-semibold">Sending...</span>
-            <Spinner color="white" />
           </>
         ) : (
           <>

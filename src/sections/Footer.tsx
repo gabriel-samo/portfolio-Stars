@@ -1,9 +1,7 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 
 const links = [
-  // { title: "YouTube", href: "#" },
   { title: "GitHub", href: "https://github.com/gabriel-samo" },
-  // { title: "Instagram", href: "#" },
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/gabriel-samoylov-7262aa22a/"
