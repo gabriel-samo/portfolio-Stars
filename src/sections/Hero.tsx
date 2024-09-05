@@ -121,8 +121,8 @@ export const HeroSection = () => {
             Building Exceptional Websites
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
-            I'm a web developer specializing in building exceptional websites.
-            Let's discuss our next project.
+            I&#x27;m a web developer specializing in building exceptional
+            websites. Let&#x27;s discuss our next project.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
@@ -146,7 +146,7 @@ export const HeroSection = () => {
             }}
           >
             <span>👋</span>
-            <span className="font-semibold">Let's Connect</span>
+            <span className="font-semibold">Let&#x27;s Connect</span>
           </button>
         </div>
       </div>
