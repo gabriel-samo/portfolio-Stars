@@ -6,6 +6,8 @@ import { Button } from "@nextui-org/button";
 import toast from "react-hot-toast";
 
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import { MyInput } from "./MyInput";
+import { MyTextarea } from "./MyTextarea";
 
 type TFormData = {
   name: string;
@@ -42,10 +44,10 @@ const ContactForm = () => {
 
   return (
     <form
-      className="flex flex-col gap-4 mx-auto mt-4 items-center"
+      className="dark flex flex-col gap-4 mx-auto mt-4 items-center"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Input
+      <MyInput
         label="Name"
         className=""
         type="text"
@@ -59,7 +61,7 @@ const ContactForm = () => {
           }
         })}
       />
-      <Input
+      <MyInput
         label="Email"
         className="w-full"
         type="email"
@@ -73,7 +75,7 @@ const ContactForm = () => {
           }
         })}
       />
-      <Textarea
+      <MyTextarea
         label="Message"
         placeholder="Your message here..."
         className=""
