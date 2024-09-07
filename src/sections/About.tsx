@@ -118,12 +118,17 @@ export const AboutSection = () => {
 
 export const hobbies = [
   { title: "Volleyball", emoji: "🏐", left: "5%", top: "5%" },
-  { title: "Food", emoji: "🍴", left: "50%", top: "5%" },
-  { title: "Traveling", emoji: "✈️", left: "35%", top: "40%" },
-  { title: "Gaming", emoji: "🎮", left: "10%", top: "35%" },
-  { title: "Music", emoji: "🎵", left: "70%", top: "45%" },
-  { title: "Fitness", emoji: "🏋️‍♂️", left: "5%", top: "65%" },
-  { title: "Reading", emoji: "📚", left: "45%", top: "70%" }
+  { title: "Gaming", emoji: "🎮", left: "50%", top: "5%" },
+  {
+    title: "(She told me",
+    emoji: "",
+    left: "40%",
+    top: "40%"
+  },
+  { title: "My Girlfriend", emoji: "👩‍🦰", left: "10%", top: "35%" },
+  { title: "to write this)", emoji: "", left: "66%", top: "45%" },
+  { title: "Music", emoji: "🎵", left: "5%", top: "65%" },
+  { title: "Food", emoji: "🍴", left: "45%", top: "70%" }
 ];
 
 export const toolboxItems = [
