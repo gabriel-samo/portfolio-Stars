@@ -1,5 +1,6 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import blogDemoWebsite from "@/assets/images/blog-dark-light.png";
+import financeDemoWebsite from "@/assets/images/samo-finance-img.png";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 
 import Image from "next/image";
@@ -82,5 +83,17 @@ export const portfolioProjects = [
     ],
     link: "https://samo-blog.onrender.com/",
     image: blogDemoWebsite
+  },
+  {
+    company: "Samo-Finance",
+    year: "2024",
+    title: "Finance Demo Website",
+    results: [
+      { title: "NextJS, TailwindCSS and Shadcn UI" },
+      { title: "Hono and Drizzle for the backend" },
+      { title: "Neon as the database" }
+    ],
+    link: "https://finance.gabrielsamo.com/",
+    image: financeDemoWebsite
   }
 ];
